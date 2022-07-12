@@ -1,0 +1,169 @@
+
+.bg-1{
+    background: rgb(244, 240, 238);
+}
+header{
+    /* background: url('../images/mushroom-01\ \(1\).jpg'); */
+    height: 80vh;
+    background-size: cover;
+}
+li{
+    list-style-type: none;
+}
+a{
+    color: white;
+    text-decoration: none !important;
+}
+
+header>nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center !important;
+    padding: 5px 20px;
+    background: lightslategray;
+}
+.nav-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center !important;
+    gap: 60px;
+    margin: 0% !important;
+    
+}
+.nav-logo{
+    font-size: 2rem;
+    color: white ;
+}
+.nav-logo:hover{
+    color: red !important;
+    transition: 0.4s;
+}
+.nav-link{
+    transition: 0.3s;
+    color: white !important;
+    font-weight:bold ;
+}
+.nav-link::after{
+    content: "";
+    display: block;
+    height: 3px;
+    width: 0px;
+    background: red;
+    transition: all 0.5s; 
+}
+.nav-link:hover{
+    color: red !important;
+}
+
+.nav-item:hover .nav-link::after{
+    color: blue !important;    
+    width: 100%;
+}
+.hamburger{
+    display:none;
+    cursor: pointer;
+}
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+}
+
+/***** details section  *******/
+
+.hero-content{
+    transform: translateY(80px);
+}
+.details-content{
+    transform: translateY(60px);
+}
+.cl-img{
+    width: 100px;
+}
+
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    right: 15px;
+    bottom: 15px;
+    z-index: 99999;
+    background: #4154f1;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    transition: all 0.4s;
+  }
+  .back-to-top i {
+    font-size: 24px;
+    color: #fff;
+    line-height: 0;
+  }
+  .back-to-top:hover {
+    background: #6776f4;
+    color: #fff;
+  }
+  .back-to-top.active {
+    visibility: visible;
+    opacity: 1;
+  }
+
+
+@media(max-width:786px){
+    .hamburger{
+        display: block;
+    }
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .nav-menu{
+       position: fixed;
+       top: 58px;
+       right: -800px;
+       gap: 0;
+       flex-direction: column;
+       background: grey;
+       width: 100%;
+       transition: 0.7s;
+       text-align: center;
+    }
+    .nav-item{
+        margin: 16px 0;
+    }
+    .nav-menu.active{
+        right: 0;
+        top: 58px;
+        transition: 0.7s;       
+    }
+
+    /***** details section  *******/
+
+    .hero-content{
+        transform: translateY(30px);
+    }
+    .details-content{
+        transform: translateY(-20px);
+    }
+
+}
+@media (min-width:786px) and (max-width:1200px){
+
+    .hero-content{
+        transform: translateY(30px);
+    }
+    .details-content{
+        transform: translateY(-40px);
+    }
+}
